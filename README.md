@@ -57,32 +57,60 @@ Compare the original, opened, and closed images.
 
 ## Developed By
 
-**Name:** ____________________________
+**Name:** SAIPRASATH P
 
-**Register No:** ______________________
+**Register No:** 212224230238
 
 ## Output
+## PROGRAM
+```
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+img = np.zeros((400, 600), dtype=np.uint8)
+
+cv2.putText(img, "SAI PRASATH", (80, 200),
+            cv2.FONT_HERSHEY_SIMPLEX, 1.5, 255, 3)
+
+kernel = np.ones((5, 5), np.uint8)
+
+opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
+
+closing = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
+
+plt.figure(figsize=(12, 4))
+
+plt.subplot(1, 3, 1)
+plt.imshow(img, cmap="gray")
+plt.title("Original")
+plt.axis("off")
+
+plt.subplot(1, 3, 2)
+plt.imshow(opening, cmap="gray")
+plt.title("Opening")
+plt.axis("off")
+
+plt.subplot(1, 3, 3)
+plt.imshow(closing, cmap="gray")
+plt.title("Closing")
+plt.axis("off")
+
+plt.tight_layout()
+plt.show()
+```
 
 ### Original Image
 
-- The input image is displayed.
-- The image serves as the source for morphological processing.
+
 
 ### Opening Operation
 
-- Original image is displayed.
-- Opened image is displayed.
-- Small foreground noise is removed.
-- Thin protrusions and isolated pixels are eliminated.
-- Object boundaries become smoother.
+
 
 ### Closing Operation
 
-- Original image is displayed.
-- Closed image is displayed.
-- Small holes and gaps inside objects are filled.
-- Broken regions are connected.
-- Object boundaries become more continuous.
+
 
 ## Applications
 
