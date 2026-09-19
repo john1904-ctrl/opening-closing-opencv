@@ -57,9 +57,9 @@ Compare the original, opened, and closed images.
 
 ## Developed By
 
-**Name:** ____________________________
+**Name:** JOHN PALL M
 
-**Register No:** ______________________
+**Register No:** 212224040140
 
 ## Output
 
